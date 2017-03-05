@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-var Input = React.createClass({
+const Input = React.createClass({
   render: function() {
     return (
       <div className="Input">
@@ -19,7 +19,7 @@ var Input = React.createClass({
   }
 });
 
-var Modal = React.createClass({
+const Modal = React.createClass({
   render: function() {
     return (
       <div className="Modal">
@@ -47,7 +47,7 @@ var Modal = React.createClass({
   }
 });
 
-var App = React.createClass({
+const App = React.createClass({
 
   getInitialState: function() {
     return { mounted: false };
@@ -63,7 +63,7 @@ var App = React.createClass({
   },
 
   render: function() {
-    var child;
+    let child;
 
     if(this.state.mounted) {
       child = (<Modal onSubmit={this.handleSubmit} />);
