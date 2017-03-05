@@ -1,12 +1,12 @@
-import React from "react";
-import * as Workspace from "./WorkspaceComponents";
+import React from 'react';
+import * as Workspace from './WorkspaceComponents';
 
 const ImagePreview = React.createClass({
   render: function() {
     return (
       <div
         className="ImagePreview"
-        style={{ backgroundImage: "url(" + this.props.image + ")" }}
+        style={{ backgroundImage: 'url(' + this.props.image + ')' }}
       >
         <div className="WorkspaceOverview">
           <Workspace.Information

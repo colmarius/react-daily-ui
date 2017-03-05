@@ -1,11 +1,11 @@
-import React from "react";
-import pluralize from "pluralize";
+import React from 'react';
+import pluralize from 'pluralize';
 
 const OrderSummary = React.createClass({
   render: function() {
     const duration = this.props.duration +
-      " " +
-      pluralize("day", this.props.duration);
+      ' ' +
+      pluralize('day', this.props.duration);
 
     // Initial total Calculation
     const initialTotal = this.props.duration * this.props.price;

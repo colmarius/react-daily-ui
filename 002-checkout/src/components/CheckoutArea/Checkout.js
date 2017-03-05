@@ -1,6 +1,6 @@
-import React from "react";
-import OrderSummary from "./OrderSummary";
-import { PaymentForm } from "./PaymentFormComponents";
+import React from 'react';
+import OrderSummary from './OrderSummary';
+import { PaymentForm } from './PaymentFormComponents';
 
 const Checkout = React.createClass({
   render: function() {

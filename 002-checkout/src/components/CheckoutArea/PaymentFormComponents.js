@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function BasicInput(props) {
   return (
@@ -56,7 +56,7 @@ function CheckoutButton(props) {
       <button>Book securely</button>
       <span>
         <i className="fa fa-fw fa-lock" />
-        {" "}Your credit card information is encrypted
+        {' '}Your credit card information is encrypted
       </span>
     </div>
   );

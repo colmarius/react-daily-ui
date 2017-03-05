@@ -1,34 +1,33 @@
-import React from 'react'
-import update from 'react-addons-update'
-import math from 'mathjs'
+import React from 'react';
+import update from 'react-addons-update';
+import math from 'mathjs';
 import './App.css';
 
 var App = React.createClass({
   getInitialState: function() {
-    return ({
+    return {
       operations: []
-    });
+    };
   },
   calculateOperations: function() {
     var result = this.state.operations.join('');
-    if(result){
+    if (result) {
       result = String(math.eval(result));
-      this.setState({ operations : [result] });
+      this.setState({ operations: [result] });
     }
-    
   },
   handleClick: function(e) {
     var value = e.target.getAttribute('data-value');
     switch (value) {
       case 'clear':
-        this.setState({ operations: []});
+        this.setState({ operations: [] });
         break;
       case 'equal':
         this.calculateOperations();
         break;
       default:
-        var newOperations = update(this.state.operations, {$push: [value]});
-        this.setState({operations: newOperations});
+        var newOperations = update(this.state.operations, { $push: [value] });
+        this.setState({ operations: newOperations });
         break;
     }
   },
@@ -42,19 +41,19 @@ var App = React.createClass({
           <Button onClick={this.handleClick} label="4" value="4" />
           <Button onClick={this.handleClick} label="1" value="1" />
           <Button onClick={this.handleClick} label="0" value="0" />
-          
+
           <Button onClick={this.handleClick} label="/" value="/" />
           <Button onClick={this.handleClick} label="8" value="8" />
           <Button onClick={this.handleClick} label="5" value="5" />
           <Button onClick={this.handleClick} label="2" value="2" />
           <Button onClick={this.handleClick} label="." value="." />
-          
+
           <Button onClick={this.handleClick} label="x" value="*" />
           <Button onClick={this.handleClick} label="9" value="9" />
           <Button onClick={this.handleClick} label="6" value="6" />
           <Button onClick={this.handleClick} label="3" value="3" />
           <Button label="" value="null" />
-          
+
           <Button onClick={this.handleClick} label="-" value="-" />
           <Button onClick={this.handleClick} label="+" size="2" value="+" />
           <Button onClick={this.handleClick} label="=" size="2" value="equal" />
@@ -81,17 +80,22 @@ var Buttons = React.createClass({
       <div className="Buttons">
         {this.props.children}
       </div>
-    )
+    );
   }
 });
 
 var Button = React.createClass({
   render: function() {
     return (
-      <div onClick={this.props.onClick} className="Button" data-size={this.props.size} data-value={this.props.value}>
-      {this.props.label}  
+      <div
+        onClick={this.props.onClick}
+        className="Button"
+        data-size={this.props.size}
+        data-value={this.props.value}
+      >
+        {this.props.label}
       </div>
-    )
+    );
   }
 });
 

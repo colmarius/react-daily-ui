@@ -1,8 +1,8 @@
-import React from "react";
-import pluralize from "pluralize";
+import React from 'react';
+import pluralize from 'pluralize';
 
 function Information(props) {
-  const duration = pluralize("day", props.duration);
+  const duration = pluralize('day', props.duration);
 
   return (
     <div className="WorkspaceInformation">
@@ -16,7 +16,7 @@ function Information(props) {
 }
 
 function Meta(props) {
-  const people = pluralize("person", props.people);
+  const people = pluralize('person', props.people);
 
   return (
     <div className="WorkspaceMeta">

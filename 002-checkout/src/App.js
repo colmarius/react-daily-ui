@@ -1,15 +1,15 @@
-import React from "react";
-import "./App.css";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import ImagePreview from "./components/ImagePreviewArea/ImagePreview";
-import Checkout from "./components/CheckoutArea/Checkout";
+import React from 'react';
+import './App.css';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ImagePreview from './components/ImagePreviewArea/ImagePreview';
+import Checkout from './components/CheckoutArea/Checkout';
 
 const Overlay = React.createClass({
   render: function() {
     return (
       <div
         className="Overlay"
-        style={{ backgroundImage: "url(" + this.props.image + ")" }}
+        style={{ backgroundImage: 'url(' + this.props.image + ')' }}
       >
         Something
       </div>
@@ -58,7 +58,7 @@ const App = React.createClass({
   },
 
   handleSubmit: function(e) {
-    console.log("handle ajax submission here");
+    console.log('handle ajax submission here');
     e.preventDefault();
   },
 
