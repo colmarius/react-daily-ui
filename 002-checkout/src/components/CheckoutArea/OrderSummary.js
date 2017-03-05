@@ -1,25 +1,27 @@
-import React from 'react'
-import pluralize from 'pluralize'
+import React from "react";
+import pluralize from "pluralize";
 
-var OrderSummary = React.createClass({
+const OrderSummary = React.createClass({
   render: function() {
-    var duration = this.props.duration + " " +pluralize('day',this.props.duration);
-    
+    const duration = this.props.duration +
+      " " +
+      pluralize("day", this.props.duration);
+
     // Initial total Calculation
-    var initialTotal = this.props.duration * this.props.price;
-    
+    const initialTotal = this.props.duration * this.props.price;
+
     // Discount Calculation
-    var discount = Math.floor((initialTotal / 100) * this.props.discount);
-    
+    const discount = Math.floor(initialTotal / 100 * this.props.discount);
+
     // Subtotal (with Discount)
-    var subTotal = initialTotal - discount;
-    
+    const subTotal = initialTotal - discount;
+
     // Calculate tax
-    var tax = Math.floor((subTotal / 100) * this.props.tax);
-    
+    const tax = Math.floor(subTotal / 100 * this.props.tax);
+
     // Total
-    var total = subTotal + tax;
-    
+    const total = subTotal + tax;
+
     return (
       <div className="OrderSummary">
         <div className="Title">Order Summary</div>
@@ -54,4 +56,4 @@ var OrderSummary = React.createClass({
   }
 });
 
-export default OrderSummary
+export default OrderSummary;
